@@ -25,53 +25,53 @@ The Nexus Finance architecture is composed of several interconnected modules tha
 
 ![Architecture Diagram](./architecture.jpeg)
 
-### Components
+### Smart Contract Components 
 
-1. **Staking Module**: 
-   - Handles the staking and unstaking of tokens.
-   - Users can lock their tokens to earn rewards over time.
-   - Integrates with the staking issuance module for minting and burning operations.
+1. **Staking**: 
+   - Users stake NIBI tokens securely and efficiently.
+   - Validates transactions and compliance with staking parameters.
+   - Generates stNIBI tokens as proof of stake, simplifying staking rewards.
 
-2. **Staking Issuance Module**:
-   - Manages the issuance of pegged tokens when users stake their assets.
-   - Handles the burning of pegged tokens during the unstaking process.
+2. **Unstaking**:
+   - Initiates seamless unbonding of NIBI tokens.
+   - Processes undelegation to validators and calculates exchange rates.
+   - Maintains platform stability and user asset integrity
 
-3. **Mint**:
-   - Mints new pegged tokens corresponding to the staked amount.
+3. **Withdraw Unbonded**:
+   - Smooth withdrawal process for unbonded NIBI tokens.
+   - Calculates withdrawable amounts based on unbonding periods
+   - Ensures timely and accurate token withdrawals
 
-4. **Burn**:
-   - Burns pegged tokens during the unstaking process to release the original tokens.
+4. **Rewards Dispatch**:
+   - Automates rewards distribution process.
+   - Withdraws and processes staking rewards efficiently
+   - Separates fees and distributes rewards to stakeholders
 
-5. **Rewards and Yields**:
-   - Calculates and distributes rewards to users based on their staked amount and the duration of staking.
+5. **Slashing**:
+   - Ensures resilience against slashing events.
+   - Updates state with current exchange rates and slashing information
+   - Protects staked assets and maintains platform integrity.
 
-6. **Restake Module**:
-   - Allows users to restake their rewards to earn compound interest.
-   - Integrates with strategy managers and validators for optimized staking strategies.
+6. **Restake**:
+   - Handles restaking through RecieveCW20 token messages.
+   - Updates bond amounts securely with the bond function
+   - Enhances platform integrity and manages staked token records.
 
-7. **Strategy Manager**:
-   - Manages various staking strategies to maximize yields.
-   - Works with DeFi protocols and validators to ensure optimal returns.
+7. **Withdraw stNIBI**:
+   - Facilitates secure withdrawal of stNIBI tokens.
+   - Constructs transaction messages for token transfer.
+   - Efficiently manages liquidity withdrawals within the blockchain ecosystem
 
-8. **Validators**:
-   - Validates transactions and ensures the security of the staking process.
-   - Works in conjunction with the delegation module to manage user stakes.
+8. **Validator Management:**:
+   - Manages validator list via add_validator and remove_validator functions.
+   - Adds and removes validators securely for governance integrity.
+   - Crucial for maintaining network stability and blockchain governance.
 
 9. **Delegation Module**:
-   - Allows users to delegate their stakes to preferred validators.
-   - Manages the delegation and redelegation process.
+   - CW20 token contract for stNIBI tokens on Nibiru..
+   - Configures token parameters and initial balances.
+   - Secure deployment and functionality on the Nibiru chain.
 
-10. **Nexus Pod**:
-    - Central hub for managing all staking and yield farming activities.
-    - Coordinates with the rest of the modules to ensure seamless operations.
 
-## Smart Contracts
 
-Nexus Finance is powered by a suite of smart contracts, each responsible for a specific functionality within the ecosystem. The following are the key smart contracts:
 
-1. **Staking Contract**: Manages the staking and unstaking of tokens.
-2. **Pegged Token Contract**: Handles the minting and burning of pegged tokens.
-3. **Reward Distribution Contract**: Manages the calculation and distribution of staking rewards.
-4. **Restake Contract**: Facilitates the restaking of earned rewards.
-5. **Strategy Manager Contract**: Implements various yield optimization strategies.
-6. **Delegation Contract**: Manages the delegation of stakes to validators.
