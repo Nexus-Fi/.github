@@ -23,7 +23,7 @@ Nexus Finance provides a robust platform for users to maximize their staking rew
 
 The Nexus Finance architecture is composed of several interconnected modules that handle different aspects of the restaking ecosystem. Below is the architecture diagram, followed by a brief explanation of each component.
 
-![Architecture Diagram](./images/architecture.jpeg)
+![Architecture Diagram](./architecture.jpeg)
 
 ### Components
 
