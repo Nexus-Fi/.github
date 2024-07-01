@@ -2,6 +2,8 @@
 <img src="./nexusfiGif.gif" width="100%">
 NexusFi is staking and restaking protocol built on the Nibiru blockchain, enabling users to securely and efficiently stake and restake their NIBI tokens
 
+Website:- https://nexusfi.xyz/
+
 ## Testnet Contract Address 
    *These contracts are deployed on Testnet-1 of Nibiru blockchain*
    
