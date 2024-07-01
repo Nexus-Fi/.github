@@ -1,5 +1,5 @@
 ## NexusFi
-![](./nexusFI.gif)
+![](./nexusfiGif.gif)
 
 Participants have the option to directly engage with the platform through a process known as native restaking. 
 
