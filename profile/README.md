@@ -1,8 +1,6 @@
 ## NexusFi
 <img src="./nexusfiGif.gif" height=50>
-Participants have the option to directly engage with the platform through a process known as native restaking. 
-
-Unlike liquid staking, where tokens are staked through a liquid staking protocol, native restaking involves committing NIBI directly within a validator for additional commitments. This NIBI serves as a form of collateral, and if the validator deviates from its commitments, it risks losing the NIBI held within.
+NexusFi is staking and restaking protocol built on the Nibiru blockchain, enabling users to securely and efficiently stake and restake their NIBI tokens
 
 ## Testnet Contract Address 
    *These contracts are deployed on Testnet-1 of Nibiru blockchain*
