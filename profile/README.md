@@ -6,8 +6,9 @@ Participants have the option to directly engage with the platform through a proc
 
 Unlike liquid staking, where tokens are staked through a liquid staking protocol, native restaking involves committing NIBI directly within a validator for additional commitments. This NIBI serves as a form of collateral, and if the validator deviates from its commitments, it risks losing the NIBI held within.
 
-## Testnet Contract Address
-
+## Testnet Contract Address 
+   *This contracts are deployed on Testnet-1 of Nibiru blockchain*
+   
 -**Staking Contract** = nibi1pvyd8sku8m8uafqytuefy52vkz7utj4empkycnv3chxc4npnhpns0w629r.
 
 -**stNIBI token Contract** = nibi1jwc8jufz03vmtsrcwywptzksc4t9yjgnstax3r09rm9pcrl4jy9s4vpzel.
