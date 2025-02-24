@@ -1,5 +1,5 @@
 ## NexusFi
-<img src="./nexusfiGif.gif" width="100%">
+<img src="#" width="100%">
 NexusFi is staking and restaking protocol built on the Nibiru blockchain, enabling users to securely and efficiently stake and restake their NIBI tokens
 
 Website:- https://nexusfi.xyz/
