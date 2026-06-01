@@ -1,88 +1,78 @@
 ## NexusFi
-<img src="#" width="100%">
-NexusFi is staking and restaking protocol built on the Nibiru blockchain, enabling users to securely and efficiently stake and restake their NIBI tokens
+<img src="./nexusfiGif.gif" width="100%" alt="NexusFi banner">
 
+NexusFi is a modular staking and restaking infrastructure built on the Nibiru blockchain.
+It is designed to help users stake NIBI, mint liquid staking tokens, restake capital, and
+manage validator and reward flows through secure on-chain contracts.
 
+## What NexusFi delivers
 
-## Testnet Contract Address 
-   *These contracts are deployed on Testnet-1 of Nibiru blockchain*
-   
--**Staking Contract** = nibi1pvyd8sku8m8uafqytuefy52vkz7utj4empkycnv3chxc4npnhpns0w629r.
+- Native NIBI staking with liquid receipt tokens
+- Restaking flows built for reusable capital
+- Validator management and slashing awareness
+- Reward distribution and withdrawal handling
+- Testnet-ready contract deployment for real protocol operations
 
--**stNIBI token Contract** = nibi1jwc8jufz03vmtsrcwywptzksc4t9yjgnstax3r09rm9pcrl4jy9s4vpzel.
+## Testnet Contract Addresses
 
--**rstNIBI token Contract** = nibi17gxmfpc6l6s79dvghs5pxgruh3spxetx0td70qwq5jkd8sa5zx7sxvjwls.
+*These contracts are deployed on Testnet-1 of the Nibiru blockchain.*
 
--**reward dispatcher Contract** = nibi12y04ajv9fmh2n64mhtrltf8yzpqkl2a4djg8du24np5xklw5kvcq6dtsmj.
-
--**Validator Management Contract** = nibi1h3rnkjxargplk88nqg9y0xrwscj5phk8jkdhc7vcre72qp8gvfdsg8xa66 
-
-
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Architecture](#architecture)
-3. [Smart Contracts](#smart-contracts)
-4. [Quick Start](#quick-start)
-5. [Glossary](#glossary)
-
-## Introduction
-
-Nexus Finance provides a robust platform for users to maximize their staking rewards through innovative restaking strategies. By locking tokens into the Nexus Finance system, users can earn compounded interest, interact with DeFi protocols, and manage their assets seamlessly.
+- **Staking Contract**: `nibi1pvyd8sku8m8uafqytuefy52vkz7utj4empkycnv3chxc4npnhpns0w629r`
+- **stNIBI Token Contract**: `nibi1jwc8jufz03vmtsrcwywptzksc4t9yjgnstax3r09rm9pcrl4jy9s4vpzel`
+- **rstNIBI Token Contract**: `nibi17gxmfpc6l6s79dvghs5pxgruh3spxetx0td70qwq5jkd8sa5zx7sxvjwls`
+- **Reward Dispatcher Contract**: `nibi12y04ajv9fmh2n64mhtrltf8yzpqkl2a4djg8du24np5xklw5kvcq6dtsmj`
+- **Validator Management Contract**: `nibi1h3rnkjxargplk88nqg9y0xrwscj5phk8jkdhc7vcre72qp8gvfdsg8xa66`
 
 ## Architecture
 
-The Nexus Finance architecture is composed of several interconnected modules that handle different aspects of the restaking ecosystem. Below is the architecture diagram, followed by a brief explanation of each component.
+The architecture below shows the core protocol modules and how they coordinate staking,
+restaking, rewards, and validator operations.
 
 ![Architecture Diagram](./architecture.jpeg)
 
-### Smart Contract Components 
+### Core Modules
 
-1. **Staking**: 
-   - Users stake NIBI tokens securely and efficiently.
-   - Validates transactions and compliance with staking parameters.
-   - Generates stNIBI tokens as proof of stake, simplifying staking rewards.
+1. **Staking**
+   - Accepts NIBI deposits
+   - Mints stNIBI as the liquid staking receipt
+   - Keeps staking state aligned with protocol rules
 
-2. **Unstaking**:
-   - Initiates seamless unbonding of NIBI tokens.
-   - Processes undelegation to validators and calculates exchange rates.
-   - Maintains platform stability and user asset integrity
+2. **Unstaking**
+   - Starts the unbonding flow for NIBI
+   - Tracks exchange rates and undelegation status
+   - Preserves user asset integrity during exit
 
-3. **Withdraw Unbonded**:
-   - Smooth withdrawal process for unbonded NIBI tokens.
-   - Calculates withdrawable amounts based on unbonding periods
-   - Ensures timely and accurate token withdrawals
+3. **Withdraw Unbonded**
+   - Releases unbonded NIBI after the waiting period
+   - Calculates withdrawable balances
+   - Completes the exit flow cleanly
 
-4. **Rewards Dispatch**:
-   - Automates rewards distribution process.
-   - Withdraws and processes staking rewards efficiently
-   - Separates fees and distributes rewards to stakeholders
+4. **Rewards Dispatch**
+   - Collects and distributes staking rewards
+   - Handles fee separation and reward allocation
+   - Keeps reward flows automated
 
-5. **Slashing**:
-   - Ensures resilience against slashing events.
-   - Updates state with current exchange rates and slashing information
-   - Protects staked assets and maintains platform integrity.
+5. **Slashing**
+   - Records slashing-related state changes
+   - Updates exchange rate data when needed
+   - Protects protocol accounting during validator penalties
 
-6. **Restake**:
-   - Handles restaking through RecieveCW20 token messages.
-   - Updates bond amounts securely with the bond function
-   - Enhances platform integrity and manages staked token records.
+6. **Restake**
+   - Accepts CW20 restake messages
+   - Updates bonded amounts programmatically
+   - Extends capital efficiency across the protocol
 
-7. **Withdraw stNIBI**:
-   - Facilitates secure withdrawal of stNIBI tokens.
-   - Constructs transaction messages for token transfer.
-   - Efficiently manages liquidity withdrawals within the blockchain ecosystem
+7. **Withdraw stNIBI**
+   - Redeems stNIBI through token transfer flows
+   - Supports liquidity-aware withdrawals
+   - Keeps user exit mechanics simple
 
-8. **Validator Management:**:
-   - Manages validator list via add_validator and remove_validator functions.
-   - Adds and removes validators securely for governance integrity.
-   - Crucial for maintaining network stability and blockchain governance.
+8. **Validator Management**
+   - Adds and removes validators
+   - Helps maintain protocol governance controls
+   - Supports a healthy validator set
 
-9. **Delegation Module**:
-   - CW20 token contract for stNIBI tokens on Nibiru..
-   - Configures token parameters and initial balances.
-   - Secure deployment and functionality on the Nibiru chain.
-
-
-
-
+9. **Delegation Module**
+   - Powers the stNIBI CW20 token
+   - Defines token parameters and balances
+   - Supports deployment and use on Nibiru
